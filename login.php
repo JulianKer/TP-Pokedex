@@ -26,7 +26,7 @@
         </div>
         <button type="submit" class="btn btn-login btn-block w-100">Ingresar</button>
     </form>
-    <p class="mt-3">¿No tienes una cuenta? <a href="#" class="link-register">Regístrate aquí</a></p>
+    <p class="mt-3">¿No tienes una cuenta? <a href="/TP-Pokedex/register.php" class="link-register">Regístrate aquí</a></p>
 </div>
 
 <!-- Bootstrap JS -->

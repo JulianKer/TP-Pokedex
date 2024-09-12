@@ -1,0 +1,65 @@
+body {
+    background-color: #e0f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #00796b;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+.register-header {
+    background-color: #004d40;
+    padding: 20px;
+    border-radius: 50% 50% 0 0;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.register-header img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+.btn-register {
+    background-color: #ff6f00;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.btn-register:hover {
+    background-color: #ff8f00;
+}
+.form-control {
+    border-radius: 30px;
+    margin-top: 15px;
+    border: none;
+    padding: 10px;
+    background-color: #e0f2f1;
+}
+.form-control:focus {
+    background-color: #b2dfdb;
+    box-shadow: none;
+}
+.link-login {
+    color: #ffcc80;
+    text-decoration: none;
+}
+.link-login:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        background-color: #00796b;
+        box-shadow: none;
+    }
+
+    .register-container {
+        box-shadow: none;
+    }
+}
