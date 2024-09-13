@@ -31,7 +31,7 @@
         </div>
         <button type="submit" class="btn btn-register btn-block w-100">Registrarse</button>
     </form>
-    <p class="mt-3">¿Ya tienes una cuenta? <a href="/TP-Pokedex/login.php" class="link-login">Inicia sesión</a></p>
+    <p class="mt-3">¿Ya tienes una cuenta? <a href="/TP-Pokedex/views/login.php" class="link-login">Inicia sesión</a></p>
 </div>
 
 <!-- Bootstrap JS -->
