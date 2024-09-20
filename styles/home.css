@@ -6,6 +6,221 @@ body{
 }
 
 main{
-
     min-height: 90vh;
+    margin: 2em 1em;
+}
+
+
+.form_buscador{
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+
+    & input[type="text"]{
+        border: 0;
+        font-size: 1.2em;
+        padding: 0 1em;
+        border-bottom-left-radius: 1em;
+        border-top-left-radius: 1em;
+        width: 90%;
+    }
+
+    input[type="text"]:focus{
+        outline: 0;
+    }
+
+    input[type="submit"]{
+        width: 20%;
+        border-bottom-right-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+}
+
+
+.btn-new-pokemon,
+.btn{
+    background-color: #ff6f00;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 1em;
+    font-size: 1em;
+}
+
+.btn-new-pokemon{
+    width: 100%;
+    padding: .8em;
+    border-radius: 3px;
+
+    position: sticky;
+    bottom: 10px;
+    & a{
+        width: 100%;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.btn-new-pokemon:hover,
+.btn:hover{
+    background-color: #ff8f00;
+    cursor: pointer;
+}
+
+
+/*-----------------     CONTENEDOR DE LOS POKEMONES-------------------------------------------------------------------------------*/
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2em 0;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    background-color: #fff;
+    width: 70%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+}
+
+tr{
+    opacity: 0;
+    transform: scaleY(0.5);
+    animation: show 0.5s forwards;
+}
+
+th{
+    background-color: #e4e4e4;
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+
+td{
+    border: 1px solid #ccc;
+}
+
+.img_poke{
+    max-width: 10em;
+    width: 9.8em;
+}
+
+.img_tipo {
+    width: 4em;
+}
+
+.col1, .col2{
+    max-width: 10em;
+    width: 10em;
+}
+
+.col3{
+    min-width: 3em;
+}
+.col4{
+    min-width: 5em;
+}
+
+.col5 >div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn_editar,
+.btn_eliminar{
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 7em;
+    height: 2em;
+}
+
+.btn_editar{
+    background-color: #16168c;
+}
+
+.btn_eliminar{
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+/* ESTILO DE LA SCROLL Y LA ANIMACION DE CUANDO RECARGA LA PAG---------------------------*/
+.table-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #ff8f00;
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scaleY(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* --------------------------------------------------------------------------------------------*/
+
+
+@media screen and (max-width: 1230px){
+
+    .table-container{
+        display: block;
+    }
+
+    table{
+        width: 100%;
+    }
+
+    .col5 >div{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 700px){
+
+    .form_buscador {
+        & input[type="text"] {
+            width: 70%;
+        }
+
+        input[type="submit"] {
+            width: 30%;
+        }
+    }
 }

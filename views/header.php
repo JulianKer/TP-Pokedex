@@ -3,9 +3,16 @@
         <img src="/TP-Pokedex/assets/icons/pokemon-logo.svg" style="width: 120px;">
         <!-- aca deberiamos incluir la logica que me deje acceder a alguna variable que me diga si el user esta iniciado y,
          si NO esta iniciado, muestro esta <a>:  -->
-        <a href="/TP-Pokedex/views/login.php" style="background-color: #ff6f00;border: none;color: white;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;text-decoration: none; border-radius: 3px; padding: .5em 15px;">Iniciar Sesión</a>
-        <!-- en cambio, si el user ESTÁ logueado, deberia mostrar una etiqueta p donde diga el nombre del user:
-        <p> php echo $nombreUser</p>   algo asi pero preguntando antes con un if-->
+        <?php
+        $admin = true;
+        $nombre = "JULIAN";
+        if (!$admin){?>
+            <a href="/TP-Pokedex/views/login.php" style="background-color: #ff6f00;border: none;color: white;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;text-decoration: none; border-radius: 3px; padding: .5em 15px;">Iniciar Sesión</a>
+            <!-- en cambio, si el user ESTÁ logueado, deberia mostrar una etiqueta p donde diga el nombre del user:
+            <p> php echo $nombreUser</p>   algo asi pero preguntando antes con un if-->
+        <?php } else { ?>
+            <p style="font-family: 'Open Sans', 'DejaVu Sans', sans-serif; font-weight: bold; color: #00796b">Usuario: <?php echo $nombre;?></p>
+        <?php }?>
     </nav>
 </header>
 
