@@ -34,7 +34,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr class="fila_de_pokemon">
                     <td class="col1"><img src="/TP-Pokedex/assets/pokemones/Bayleef.webp" alt="Imagen" class="img_poke"></td>
                     <td class="col2"><img src="/TP-Pokedex/assets/tipos/planta.avif" alt="Imagen" class="img_tipo"></td>
                     <td class="col3">1</td>

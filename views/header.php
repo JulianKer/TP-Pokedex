@@ -11,7 +11,7 @@
             <!-- en cambio, si el user ESTÁ logueado, deberia mostrar una etiqueta p donde diga el nombre del user:
             <p> php echo $nombreUser</p>   algo asi pero preguntando antes con un if-->
         <?php } else { ?>
-            <p style="font-family: 'Open Sans', 'DejaVu Sans', sans-serif; font-weight: bold; color: #00796b">Usuario: <?php echo $nombre;?></p>
+            <p style="font-family: 'Open Sans', 'DejaVu Sans', sans-serif; font-weight: bold; color: #00796b; display: flex; align-items: center; gap: 10px">Usuario: <?php echo $nombre;?> <a href="/TP-Pokedex/views/login.php"><img src="/TP-Pokedex/assets/icons/icon_logout.svg"></a></p>
         <?php }?>
     </nav>
 </header>

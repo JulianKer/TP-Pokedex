@@ -86,13 +86,17 @@ table {
     border-collapse: collapse;
 }
 
+thead{
+    color: #00796b;
+}
+
 th, td {
     padding: 10px;
     text-align: center;
     font-family: "Open Sans", "DejaVu Sans", sans-serif;
 }
 
-tr{
+.fila_de_pokemon{
     opacity: 0;
     transform: scaleY(0.5);
     animation: show 0.5s forwards;

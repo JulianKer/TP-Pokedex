@@ -1,3 +1,17 @@
+<?php
+
+$error = "";
+
+if (isset($_GET["error"])) {
+    $error = $_GET["error"];
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,16 +28,22 @@
 
 <div class="login-container">
     <div class="login-header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pokémon_logo.svg" alt="Pokémon Logo">
+        <img src="/TP-Pokedex/assets/icons/pokemon-logo.svg" alt="Pokémon Logo">
         <h1>Iniciar Sesión</h1>
     </div>
-    <form>
+    <form action="/TP-Pokedex/controller/controllerLogin.php" method="post">
         <div class="mb-3">
-            <input type="text" class="form-control" id="usuario" placeholder="Correo" required>
+            <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Usuario">
         </div>
         <div class="mb-3">
-            <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" required>
+            <input type="password" name="password" class="form-control" id="contrasena" placeholder="Contraseña">
         </div>
+        <?php
+        if($error != "") {
+            echo '<div class="alert alert-danger">' . $error . '</div>';
+        }
+        ?>
+
         <button type="submit" class="btn btn-login btn-block w-100">Ingresar</button>
     </form>
     <p class="mt-3">¿No tienes una cuenta? <a href="/TP-Pokedex/views/register.php" class="link-register">Regístrate aquí</a></p>
