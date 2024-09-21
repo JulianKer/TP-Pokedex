@@ -1,3 +1,13 @@
+<?php
+session_start();
+$estaLogeado = false;
+
+if (isset($_SESSION['usuario'])){
+    $estaLogeado = true;
+}
+?>
+
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -26,9 +36,9 @@
                     <th class="col3">N°</th>
                     <th class="col4">Nombre</th>
                     <?php
-                    $admin = false;
 
-                    if($admin){?>
+                    if($estaLogeado){?>
+
                         <th class="">Acciones</th> <!-- ACA HAY Q PONER LO DE SI EL ADMIN ES TRU O FALSE-->
                     <?php }?>
                 </tr>
@@ -39,7 +49,7 @@
                     <td class="col2"><img src="/TP-Pokedex/assets/tipos/planta.avif" alt="Imagen" class="img_tipo"></td>
                     <td class="col3">1</td>
                     <td class="col4">Bayleef</td>
-                    <?php if($admin){?>
+                    <?php if($estaLogeado){?>
                         <td class="col5">
                             <div>
                                 <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>

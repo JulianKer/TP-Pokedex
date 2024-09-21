@@ -46,7 +46,7 @@ if (isset($_GET["error"])) {
 
         <button type="submit" class="btn btn-login btn-block w-100">Ingresar</button>
     </form>
-    <p class="mt-3">¿No tienes una cuenta? <a href="/TP-Pokedex/views/register.php" class="link-register">Regístrate aquí</a></p>
+    <p class="mt-3">¿No tienes una cuenta? <a href="/TP-Pokedex/index.php" class="link-register">Volver</a></p>
 </div>
 
 <!-- Bootstrap JS -->
