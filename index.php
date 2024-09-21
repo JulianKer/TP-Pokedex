@@ -45,8 +45,8 @@ if (isset($_SESSION['usuario'])){
                 </thead>
                 <tbody>
                 <tr class="fila_de_pokemon">
-                    <td class="col1"><img src="/TP-Pokedex/assets/pokemones/Bayleef.webp" alt="Imagen" class="img_poke"></td>
-                    <td class="col2"><img src="/TP-Pokedex/assets/tipos/planta.avif" alt="Imagen" class="img_tipo"></td>
+                    <td class="col1"><a href="#"><img src="/TP-Pokedex/assets/pokemones/Bayleef.webp" alt="Imagen" class="img_poke"></a></td>
+                    <td class="col2"><a href="#"><img src="/TP-Pokedex/assets/tipos/planta.avif" alt="Imagen" class="img_tipo"></a></td>
                     <td class="col3">1</td>
                     <td class="col4">Bayleef</td>
                     <?php if($estaLogeado){?>
