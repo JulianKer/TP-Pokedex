@@ -7,12 +7,12 @@ body{
 
 main{
     min-height: 90vh;
-    margin: 2em 1em;
+    margin: 2em 5em;
 }
 
 
 .form_buscador{
-    margin: 1em 0;
+    margin: 4em 0;
     display: flex;
     justify-content: space-between;
     gap: 0;
@@ -51,6 +51,7 @@ main{
 .btn-new-pokemon{
     width: 100%;
     padding: .8em;
+    margin: 3em 0 3em 0;
     border-radius: 3px;
 
     position: sticky;
@@ -71,115 +72,96 @@ main{
 
 /*-----------------     CONTENEDOR DE LOS POKEMONES-------------------------------------------------------------------------------*/
 
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 2em 0;
-    display: flex;
-    justify-content: center;
+.contenedor_pokemones{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    place-items: center;
+    gap: 2.5em 1em;
+
+    margin: 3em 0;
 }
 
-table {
-    background-color: #fff;
-    width: 70%;
-    min-width: 600px;
-    border-collapse: collapse;
-}
-
-thead{
-    color: #00796b;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
-}
-
-.fila_de_pokemon{
-    opacity: 0;
-    transform: scaleY(0.5);
+.pokemon{
+    background-color: #62afa6;
+    border-radius: 20px;
+    max-width: 270px;
+    padding: 1em;
+    transition: all .2s ease;
     animation: show 0.5s forwards;
+
+    & .cont_1{
+        width: 100%;
+
+        & img{
+            width: 100%;
+            padding-bottom: 1em;
+        }
+    }
+
+    .cont_2{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        & .descripcion{
+            text-decoration: none;
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+            font-size: 1.2em;
+            color: #000;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            & img{
+                width: 2em;
+                height: 2em;
+                border-radius: 5px;
+            }
+        }
+
+        .cont_botones{
+            display: flex;
+            justify-content: space-evenly;
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+            & .btn_editar,
+            .btn_eliminar{
+                color: #fff;
+                border-radius: 5px;
+                padding: 5px;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 7em;
+                height: 2em;
+            }
+
+            .btn_editar{
+                background-color: #16168c;
+            }
+
+            .btn_editar:hover{
+                background-color: #3838af;
+            }
+
+            .btn_eliminar{
+                background-color: #ff0000;
+            }
+
+            .btn_eliminar:hover{
+                background-color: #ff5757;
+            }
+        }
+    }
 }
 
-th{
-    background-color: #e4e4e4;
-    border: 1px solid #ccc;
-    border-top: 0;
+.pokemon:hover {
+    box-shadow: 0 0 15px #000;
+    transform: scale(1.03);
 }
 
-td{
-    border: 1px solid #ccc;
-}
-
-.img_poke{
-    max-width: 10em;
-    width: 9.8em;
-}
-
-.img_tipo {
-    width: 4em;
-    padding: 2.5em;
-}
-
-.col1, .col2{
-    max-width: 10em;
-    width: 10em;
-}
-
-.col3{
-    min-width: 3em;
-}
-.col4{
-    min-width: 5em;
-}
-
-.col5 >div{
-    display: flex;
-    justify-content: space-around;
-}
-
-.btn_editar,
-.btn_eliminar{
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 7em;
-    height: 2em;
-}
-
-.btn_editar{
-    background-color: #16168c;
-}
-
-.btn_eliminar{
-    background-color: red;
-}
-
-
-
-
-
-
-
-
-/* ESTILO DE LA SCROLL Y LA ANIMACION DE CUANDO RECARGA LA PAG---------------------------*/
-.table-container::-webkit-scrollbar {
-    height: 10px;
-}
-
-.table-container::-webkit-scrollbar-thumb {
-    background-color: #ff8f00;
-    border-radius: 10px;
-}
-
-.table-container::-webkit-scrollbar-track {
-    background-color: #e4e4e4;
-}
 
 @keyframes show {
     0% {
@@ -191,33 +173,23 @@ td{
         transform: scaleY(1);
     }
 }
+/*----------FIN CONTENEDOR POKEMONES --------------------------------------------------------------------------*/
 
-/* --------------------------------------------------------------------------------------------*/
 
 
-@media screen and (max-width: 1230px){
 
-    .table-container{
-        display: block;
-    }
-
-    table{
-        width: 100%;
-    }
-
-    .col5 >div{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
-
-}
 
 
 
 
 @media screen and (max-width: 700px){
+    main{
+        margin: 2em 1em;
+    }
+
+    header{
+        padding: .7em 1em;
+    }
 
     .form_buscador {
         & input[type="text"] {

@@ -5,7 +5,23 @@ if ($estaLogeado) {
     $nombre = strtoupper($_SESSION["usuario"]);
 }
 ?>
-<header style="background-color: #ffffff; padding: .7em 2em;">
+
+<style>
+
+    header{
+        background-color: #fff;
+        padding: .7em 5em;
+    }
+
+    @media screen and (max-width: 700px){
+        header{
+            padding: .7em 1em;
+        }
+    }
+
+</style>
+
+<header>
     <nav style="height: 100%; display: flex; justify-content: space-between; align-items: center;">
         <img src="/TP-Pokedex/assets/icons/pokemon-logo.svg" style="width: 120px;">
         <?php

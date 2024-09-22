@@ -27,6 +27,219 @@ if (isset($_SESSION['usuario'])){
         </form>
 
 
+        <section class="contenedor_pokemones">
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="editar" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="eliminar" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="pokemon">
+                <a href="#" class="cont_1">
+                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
+                </a>
+                <div class="cont_2">
+                    <a href="#" class="descripcion">
+                        <p class="numero_pokemon">1</p>
+                        <p class="nombre_pokemon">Bellossom</p>
+                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+                    </a>
+                    <?php
+
+                    if($estaLogeado){?>
+                        <div class="cont_botones">
+                            <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                            <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+
+
+
+
+
+        </section>
+        <!--
         <div class="table-container">
             <table>
                 <thead>
@@ -39,7 +252,7 @@ if (isset($_SESSION['usuario'])){
 
                     if($estaLogeado){?>
 
-                        <th class="">Acciones</th> <!-- ACA HAY Q PONER LO DE SI EL ADMIN ES TRU O FALSE-->
+                        <th class="">Acciones</th>  ACA HAY Q PONER LO DE SI EL ADMIN ES TRU O FALSE
                     <?php }?>
                 </tr>
                 </thead>
@@ -55,13 +268,14 @@ if (isset($_SESSION['usuario'])){
                                 <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
                                 <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
                             </div>
-                        </td> <!-- ACA HAY Q PONER LO DE SI EL ADMIN ES TRU O FALSE y los link a la pag editar con el id del pokemon-->
+                        </td>  ACA HAY Q PONER LO DE SI EL ADMIN ES TRU O FALSE y los link a la pag editar con el id del pokemon
                     <?php }?>
                 </tr>
 
                 </tbody>
             </table>
         </div>
+        -->
 
         <button class="btn-new-pokemon">
             <a href="#">Nuevo pokemon</a>
