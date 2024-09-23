@@ -3,6 +3,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: #b2dfdb;
+
 }
 
 main{
@@ -17,7 +18,7 @@ main{
     justify-content: space-between;
     gap: 0;
 
-    & input[type="text"]{
+    & input[type="search"]{
         border: 0;
         font-size: 1.2em;
         padding: 0 1em;
@@ -26,7 +27,7 @@ main{
         width: 90%;
     }
 
-    input[type="text"]:focus{
+    input[type="search"]:focus{
         outline: 0;
     }
 
@@ -46,6 +47,7 @@ main{
     font-weight: bold;
     padding: 1em;
     font-size: 1em;
+    transition: all .2s;
 }
 
 .btn-new-pokemon{
@@ -69,7 +71,6 @@ main{
     cursor: pointer;
 }
 
-
 /*-----------------     CONTENEDOR DE LOS POKEMONES-------------------------------------------------------------------------------*/
 
 .contenedor_pokemones{
@@ -82,11 +83,11 @@ main{
 }
 
 .pokemon{
-    background-color: #62afa6;
+    background: linear-gradient(to top, #004D40FF, #62afa6, #62afa6, #62afa6);
     border-radius: 20px;
     max-width: 270px;
-    padding: 1em;
-    transition: all .2s ease;
+    padding: 1.5em 1em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     animation: show 0.5s forwards;
 
     & .cont_1{
@@ -157,9 +158,9 @@ main{
     }
 }
 
-.pokemon:hover {
+.pokemon:hover{
     box-shadow: 0 0 15px #000;
-    transform: scale(1.03);
+    transform: translateX(50px);
 }
 
 
@@ -192,7 +193,7 @@ main{
     }
 
     .form_buscador {
-        & input[type="text"] {
+        & input[type="search"] {
             width: 70%;
         }
 
