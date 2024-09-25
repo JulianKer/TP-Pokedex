@@ -83,7 +83,7 @@ main{
 }
 
 .pokemon{
-    background: linear-gradient(to top, #004D40FF, #62afa6, #62afa6, #62afa6);
+    background: linear-gradient(to top, #004D40FF, #004D40FF, #62afa6, #62afa6, #62afa6);
     border-radius: 20px;
     max-width: 270px;
     padding: 1.5em 1em;
@@ -94,7 +94,8 @@ main{
         width: 100%;
 
         & img{
-            width: 100%;
+            width: 260px;
+            height: 256px;
             padding-bottom: 1em;
         }
     }
@@ -108,7 +109,8 @@ main{
             text-decoration: none;
             font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
             font-size: 1.2em;
-            color: #000;
+            color: #fff;
+            font-weight: bolder;
 
             display: flex;
             justify-content: space-around;
@@ -140,6 +142,7 @@ main{
             }
 
             .btn_editar{
+                transition: all .2s;
                 background-color: #16168c;
             }
 
@@ -148,6 +151,7 @@ main{
             }
 
             .btn_eliminar{
+                transition: all .2s;
                 background-color: #ff0000;
             }
 
