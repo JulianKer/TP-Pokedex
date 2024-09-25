@@ -23,7 +23,7 @@ if ($estaLogeado) {
 
 <header>
     <nav style="height: 100%; display: flex; justify-content: space-between; align-items: center;">
-        <img src="/TP-Pokedex/assets/icons/pokemon-logo.svg" style="width: 120px;">
+        <a href="/TP-Pokedex/index.php">  <img src="/TP-Pokedex/assets/icons/pokemon-logo.svg" style="width: 120px;"></a>
         <?php
         if (!$estaLogeado) { ?>
             <a href="/TP-Pokedex/views/login.php" style="background-color: #ff6f00; border: none; color: white; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-decoration: none; border-radius: 3px; padding: .5em 15px; margin: .75em 0;">Iniciar Sesión</a>
