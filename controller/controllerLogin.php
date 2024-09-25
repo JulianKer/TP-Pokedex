@@ -16,17 +16,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
 
         $bdd = new Database();
-        $resultado = $bdd->saberSiExisteElUsuario($usuario, $password);
 
-        if($resultado != null) {
-            $_SESSION['usuario'] = $usuario;
-            echo $_SESSION['usuario'];
-            echo isset($_SESSION['usuario']);
-            header("Location: /TP-Pokedex/index.php");
-            exit();
-
+        if ($bdd->getError() != ""){
+            $error = $bdd->getError();
         }else{
-            $error = "¡Usuario o contraseña incorrecta!";
+            $resultado = $bdd->saberSiExisteElUsuario($usuario, $password);
+
+            if($resultado != null) {
+                $_SESSION['usuario'] = $usuario;
+                echo $_SESSION['usuario'];
+                echo isset($_SESSION['usuario']);
+                header("Location: /TP-Pokedex/index.php");
+                exit();
+
+            }else{
+                $error = "¡Usuario o contraseña incorrecta!";
+            }
         }
     }
 

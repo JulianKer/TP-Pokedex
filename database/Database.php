@@ -2,12 +2,18 @@
 class Database{
 
     private $conexion;
+    private $error = "";
+
     public function __construct(){
-        $this->conexion = new mysqli(
-            "localhost",
-            "root",
-            "",
-            "pokedex");
+        try{
+            $this->conexion = new mysqli(
+                "localhost",
+                "root",
+                "",
+                "pokedex");
+        }catch (Exception $e){
+            $this->error = "Falló la conexión a la base de datos.";
+        }
     }
 
     // esta seria una func generica donde le paso la query por parametro (OJO con los insert, NO usar esta funcion hacer otra pq
@@ -24,6 +30,9 @@ class Database{
     }
 
 
+    public function getError(){
+        return $this->error;
+    }
     public function __destruct(){
         $this->conexion->close();
     }
