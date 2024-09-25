@@ -21,7 +21,7 @@ if ($estaLogeado) {
 
 </style>
 
-<header>
+<header id="arriba">
     <nav style="height: 100%; display: flex; justify-content: space-between; align-items: center;">
         <a href="/TP-Pokedex/index.php">  <img src="/TP-Pokedex/assets/icons/pokemon-logo.svg" style="width: 120px;"></a>
         <?php

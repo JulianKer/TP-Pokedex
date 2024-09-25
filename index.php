@@ -57,6 +57,9 @@ $pokemones = $bdd->getPorQuery("SELECT * FROM `pokemon` INNER JOIN `tipo` ON `po
             <?php } ?>
         </section>
 
+        <div class="container_ancla">
+            <a href="#arriba" class="ancla"><img src="/TP-Pokedex/assets/icons/arrowTop.svg" alt="arrowTop" title="Ir Arriba"></a>
+        </div>
         <button class="btn-new-pokemon">
             <a href="#">Nuevo pokemon</a>
         </button>
