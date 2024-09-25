@@ -258,50 +258,7 @@ if (isset($_SESSION['usuario'])){
                 </div>
             </div>
 
-
-
-
-
-
-
         </section>
-        <!--
-        <div class="table-container">
-            <table>
-                <thead>
-                <tr>
-                    <th class="col1">Pokemon</th>
-                    <th class="col2">Tipo</th>
-                    <th class="col3">N°</th>
-                    <th class="col4">Nombre</th>
-                    <?php
-
-                    if($estaLogeado){?>
-
-                        <th class="">Acciones</th>  ACA HAY Q PONER LO DE SI EL ADMIN ES TRU O FALSE
-                    <?php }?>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="fila_de_pokemon">
-                    <td class="col1"><a href="#"><img src="/TP-Pokedex/assets/pokemones/Bayleef.webp" alt="Imagen" class="img_poke"></a></td>
-                    <td class="col2"><a href="#"><img src="/TP-Pokedex/assets/tipos/planta.avif" alt="Imagen" class="img_tipo"></a></td>
-                    <td class="col3">1</td>
-                    <td class="col4">Bayleef</td>
-                    <?php if($estaLogeado){?>
-                        <td class="col5">
-                            <div>
-                                <a href="#" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
-                                <a href="#" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
-                            </div>
-                        </td>  ACA HAY Q PONER LO DE SI EL ADMIN ES TRU O FALSE y los link a la pag editar con el id del pokemon
-                    <?php }?>
-                </tr>
-
-                </tbody>
-            </table>
-        </div>
-        -->
 
         <button class="btn-new-pokemon">
             <a href="#">Nuevo pokemon</a>

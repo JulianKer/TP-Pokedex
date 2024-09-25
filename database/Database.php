@@ -16,6 +16,14 @@ class Database{
         return $this->conexion->query($sql)->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function saberSiExisteElUsuario($usuario, $password){
+        $stmt = $this->conexion->prepare("SELECT * FROM usuario WHERE nombre_usuario = ? and password_usuario = ?");
+        $stmt->bind_param("ss", $usuario, $password);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
+
+
     public function __destruct(){
         $this->conexion->close();
     }

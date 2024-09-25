@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+require_once ("../database/Database.php");
 $usuario = "";
 $password = "";
 
@@ -11,18 +12,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($usuario == "" || $password == "") {
         $error = "Los campos no puede estar vacios";
-        header("location: /TP-Pokedex/views/login.php?error=" . urldecode($error));
-        exit();
+
     }else{
 
-        //  ------------- HACER CUANDO TENGAMOS LA BDD-------------
-        // como NO estan vacios, TENGO Q BUSCARLOS EN EL BDD PARA VER SI EXISTE ESE USER Y DESP TE REDIRIJO,
+        $bdd = new Database();
+        $resultado = $bdd->saberSiExisteElUsuario($usuario, $password);
 
-        $_SESSION['usuario'] = $usuario;
-        echo $_SESSION['usuario'];
-        echo isset($_SESSION['usuario']);
-        header("Location: /TP-Pokedex/index.php");
-        exit();
+        if($resultado != null) {
+            $_SESSION['usuario'] = $usuario;
+            echo $_SESSION['usuario'];
+            echo isset($_SESSION['usuario']);
+            header("Location: /TP-Pokedex/index.php");
+            exit();
+
+        }else{
+            $error = "¡Usuario o contraseña incorrecta!";
+        }
     }
 
+    header("location: /TP-Pokedex/views/login.php?error=" . urldecode($error));
+    exit();
 }
