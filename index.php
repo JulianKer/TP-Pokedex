@@ -35,7 +35,7 @@ $pokemones = $bdd->getPorQuery("SELECT * FROM `pokemon`");
         <section class="contenedor_pokemones">
             <?php foreach ($pokemones as $pokemon){ ?>
                 <div class="pokemon">
-                    <a href="/TP-Pokedex/views/detallePokemon.php?<?php echo $pokemon["id_pokemon"]?>" class="cont_1">
+                    <a href="/TP-Pokedex/views/detallePokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="cont_1">
                         <img src="<?php echo $pokemon["imagen"]?>" alt="img_pokemon">
                     </a>
                     <div class="cont_2">
