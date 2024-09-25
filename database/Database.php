@@ -2,12 +2,18 @@
 class Database{
 
     private $conexion;
+    private $error = "";
+
     public function __construct(){
-        $this->conexion = new mysqli(
-            "localhost",
-            "root",
-            "",
-            "pokedex");
+        try{
+            $this->conexion = new mysqli(
+                "localhost",
+                "root",
+                "",
+                "pokedex");
+        }catch (Exception $e){
+            $this->error = "Falló la conexión a la base de datos.";
+        }
     }
 
     // esta seria una func generica donde le paso la query por parametro (OJO con los insert, NO usar esta funcion hacer otra pq
@@ -16,6 +22,17 @@ class Database{
         return $this->conexion->query($sql)->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function saberSiExisteElUsuario($usuario, $password){
+        $stmt = $this->conexion->prepare("SELECT * FROM usuario WHERE nombre_usuario = ? and password_usuario = ?");
+        $stmt->bind_param("ss", $usuario, $password);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    public function getError(){
+        return $this->error;
+    }
     public function __destruct(){
         $this->conexion->close();
     }

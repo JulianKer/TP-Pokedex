@@ -4,7 +4,23 @@ body{
     box-sizing: border-box;
     background-color: #b2dfdb;
 
+
 }
+
+body::-webkit-scrollbar{
+    width: auto;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #004d40;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #b2dfdb;
+}
+
+
+
+
 
 main{
     min-height: 90vh;
@@ -71,6 +87,49 @@ main{
     cursor: pointer;
 }
 
+
+.container_ancla{
+    display: flex;
+    justify-content: center;
+
+    & .ancla{
+        width: 3em;
+        margin: 3em 0;
+        justify-self: center;
+        transition: all .3s;
+
+        & img{
+            width: 2.5em;
+            border-radius: 5em;
+            border: solid 3px #00796BFF;
+        }
+    }
+}
+
+.container_ancla .ancla:hover{
+    animation: flotar 2s infinite;
+}
+
+
+@keyframes flotar {
+    0%{
+        transform: translateY(10px);
+    }
+    25%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    75%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}
+
+
 /*-----------------     CONTENEDOR DE LOS POKEMONES-------------------------------------------------------------------------------*/
 
 .contenedor_pokemones{
@@ -83,7 +142,7 @@ main{
 }
 
 .pokemon{
-    background: linear-gradient(to top, #004D40FF, #62afa6, #62afa6, #62afa6);
+    background: linear-gradient(to top, #004D40FF, #004D40FF, #62afa6, #62afa6, #62afa6);
     border-radius: 20px;
     max-width: 270px;
     padding: 1.5em 1em;
@@ -94,7 +153,8 @@ main{
         width: 100%;
 
         & img{
-            width: 100%;
+            width: 260px;
+            height: 256px;
             padding-bottom: 1em;
         }
     }
@@ -108,7 +168,8 @@ main{
             text-decoration: none;
             font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
             font-size: 1.2em;
-            color: #000;
+            color: #fff;
+            font-weight: bolder;
 
             display: flex;
             justify-content: space-around;
@@ -140,6 +201,7 @@ main{
             }
 
             .btn_editar{
+                transition: all .2s;
                 background-color: #16168c;
             }
 
@@ -148,6 +210,7 @@ main{
             }
 
             .btn_eliminar{
+                transition: all .2s;
                 background-color: #ff0000;
             }
 
@@ -199,6 +262,12 @@ main{
 
         input[type="submit"] {
             width: 30%;
+        }
+    }
+
+    .container_ancla{
+        & .ancla{
+            margin: 0;
         }
     }
 }
