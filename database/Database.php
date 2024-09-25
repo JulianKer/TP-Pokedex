@@ -20,7 +20,7 @@ class Database{
         $stmt = $this->conexion->prepare("SELECT * FROM usuario WHERE nombre_usuario = ? and password_usuario = ?");
         $stmt->bind_param("ss", $usuario, $password);
         $stmt->execute();
-        return $stmt->get_result()->fetch_assoc();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
 

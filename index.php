@@ -1,10 +1,15 @@
 <?php
 session_start();
+require_once("database/Database.php");
 $estaLogeado = false;
 
 if (isset($_SESSION['usuario'])){
     $estaLogeado = true;
 }
+
+$bdd = new Database();
+$pokemones = $bdd->getPorQuery("SELECT * FROM `pokemon`");
+//echo json_encode($pokemones);
 ?>
 
 
@@ -28,26 +33,28 @@ if (isset($_SESSION['usuario'])){
 
 
         <section class="contenedor_pokemones">
-            <div class="pokemon">
-                <a href="#" class="cont_1">
-                    <img src="/TP-Pokedex/assets/pokemones/Bellossom.webp" alt="img_pokemon">
-                </a>
-                <div class="cont_2">
-                    <a href="#" class="descripcion">
-                        <p class="numero_pokemon">1</p>
-                        <p class="nombre_pokemon">Bellossom</p>
-                        <img src="/TP-Pokedex/assets/tipos/agua.avif" alt="img_tipo">
+            <?php foreach ($pokemones as $pokemon){ ?>
+                <div class="pokemon">
+                    <a href="/TP-Pokedex/views/detallePokemon.php?<?php echo $pokemon["id_pokemon"]?>" class="cont_1">
+                        <img src="<?php echo $pokemon["imagen"]?>" alt="img_pokemon">
                     </a>
-                    <?php
+                    <div class="cont_2">
+                        <a href="/TP-Pokedex/views/detallePokemon.php?<?php echo $pokemon["id_pokemon"]?>" class="descripcion">
+                            <p class="numero_pokemon"><?php echo $pokemon["id_pokemon"]?></p>
+                            <p class="nombre_pokemon"><?php echo $pokemon["nombre"]?></p>
+                            <img src="/TP-Pokedex/assets/tipos/<?php echo $pokemon["id_tipo"]?>.avif" alt="img_tipo">
+                        </a>
+                        <?php
 
-                    if($estaLogeado){?>
-                        <div class="cont_botones">
-                            <a href="editar" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
-                            <a href="eliminar" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
-                        </div>
-                    <?php }?>
+                        if($estaLogeado){?>
+                            <div class="cont_botones">
+                                <a href="editar" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                                <a href="eliminar" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                            </div>
+                        <?php }?>
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
         </section>
 
         <button class="btn-new-pokemon">
