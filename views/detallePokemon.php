@@ -6,6 +6,13 @@ $estaLogeado = false;
 if (isset($_SESSION['usuario'])){
     $estaLogeado = true;
 }
+
+$pokemon = [
+'imagen' => '/imagenes/charmander.png',  // Ruta de la imagen del Pokémon
+'nombre' => 'Charmander',
+'tipo' => 'Fuego',
+'descripcion' => 'Charmander es un Pokémon tipo Fuego. Su cola arde constantemente. Si se apaga, se debilita.'
+];
 ?>
 
 
@@ -22,6 +29,21 @@ if (isset($_SESSION['usuario'])){
 
 
     <main>
+        <section class="contenedor_general">
+            <section class="detalle-pokemon">
+                <!-- Sección de la imagen del Pokémon -->
+                <div class="imagen-pokemon">
+                    <img src="<?php echo $pokemon['imagen']; ?>" alt="Imagen de <?php echo $pokemon['nombre']; ?>">
+                </div>
+
+                <!-- Sección de detalles del Pokémon -->
+                <div class="info-pokemon">
+                    <p><strong>Nombre:</strong> <?php echo $pokemon['nombre']; ?></p>
+                    <p><strong>Tipo:</strong> <?php echo $pokemon['tipo']; ?></p>
+                    <p><strong>Descripción:</strong> <?php echo $pokemon['descripcion']; ?></p>
+                </div>
+            </section>
+        </section>
 
     </main>
 
