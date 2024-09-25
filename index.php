@@ -8,7 +8,7 @@ if (isset($_SESSION['usuario'])){
 }
 
 $bdd = new Database();
-$pokemones = $bdd->getPorQuery("SELECT * FROM `pokemon`");
+$pokemones = $bdd->getPorQuery("SELECT * FROM `pokemon` INNER JOIN `tipo` ON `pokemon`.`id_tipo` = `tipo`.`id_tipo`");
 //echo json_encode($pokemones);
 ?>
 
@@ -39,10 +39,10 @@ $pokemones = $bdd->getPorQuery("SELECT * FROM `pokemon`");
                         <img src="<?php echo $pokemon["imagen"]?>" alt="img_pokemon">
                     </a>
                     <div class="cont_2">
-                        <a href="/TP-Pokedex/views/detallePokemon.php?<?php echo $pokemon["id_pokemon"]?>" class="descripcion">
+                        <a href="/TP-Pokedex/views/detallePokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="descripcion">
                             <p class="numero_pokemon"><?php echo $pokemon["id_pokemon"]?></p>
                             <p class="nombre_pokemon"><?php echo $pokemon["nombre"]?></p>
-                            <img src="/TP-Pokedex/assets/tipos/<?php echo $pokemon["id_tipo"]?>.avif" alt="img_tipo">
+                            <img src="/TP-Pokedex/assets/tipos/<?php echo $pokemon["nombre_tipo"]?>.avif" alt="img_tipo">
                         </a>
                         <?php
 
