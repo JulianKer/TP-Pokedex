@@ -34,6 +34,8 @@ class Database{
         return $this->error;
     }
     public function __destruct(){
-        $this->conexion->close();
+        if ($this->error == ""){
+            $this->conexion->close();
+        }
     }
 }
