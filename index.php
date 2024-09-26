@@ -3,6 +3,9 @@ session_start();
 require_once("database/Database.php");
 $estaLogeado = false;
 $errorBdd = "";
+$errorBusqueda = "";
+$criterioDeBusqueda = isset($_GET["criterioBusqueda"]) ? trim($_GET["criterioBusqueda"]) : "";
+$pokemones = "";
 
 if (isset($_SESSION['usuario'])){
     $estaLogeado = true;
@@ -12,9 +15,25 @@ $bdd = new Database();
 if ($bdd->getError() != ""){
     $errorBdd = $bdd->getError();
 }else{
-    $pokemones = $bdd->getPorQuery("SELECT * FROM `pokemon` INNER JOIN `tipo` ON `pokemon`.`id_tipo` = `tipo`.`id_tipo`");
+
+    if ($criterioDeBusqueda != ""){
+        //echo $criterioDeBusqueda;
+        $pokemones = $bdd->getPorQuery(
+                "SELECT * FROM `pokemon` 
+                     INNER JOIN `tipo` ON `pokemon`.`id_tipo` = `tipo`.`id_tipo` 
+                     WHERE `pokemon`.`id_pokemon` LIKE '%$criterioDeBusqueda%' 
+                        OR `pokemon`.`nombre` LIKE '%$criterioDeBusqueda%' 
+                        OR `tipo`.`nombre_tipo` LIKE '%$criterioDeBusqueda%'");
+
+        if (empty($pokemones)){
+            $pokemones = $bdd->dameTodosLosPokemones();
+            $errorBusqueda = "No se encontraron resultados para: \"". $criterioDeBusqueda . "\"";
+        }
+
+    }else{
+        $pokemones = $bdd->dameTodosLosPokemones();
+    }
 }
-//echo json_encode($pokemones);
 ?>
 
 
@@ -33,39 +52,44 @@ if ($bdd->getError() != ""){
 
 
     <main>
-        <form class="form_buscador">
-            <input type="search" placeholder="Ingrese el nombre, tipo o número de pokemon">
+        <form class="form_buscador" action="index.php" method="get">
+            <input type="search" name="criterioBusqueda" placeholder="Ingrese el nombre, tipo o número de pokemon" value="<?php echo $criterioDeBusqueda!="" ? $criterioDeBusqueda : ""?>">
             <input type="submit" value="Buscar" class="btn">
         </form>
 
+        <?php
+        if ($errorBusqueda != "") {
+            echo '<div class="alert alert-danger" style="text-align: center">' . $errorBusqueda . '</div>';
+        }
 
-        <section class="contenedor_pokemones">
+        if ($errorBdd != "") {
+        echo '<div class="alert alert-danger" style="text-align: center">' . $errorBdd . '</div>';
+        }else{?>
+            <section class="contenedor_pokemones">
             <?php
-            if ($errorBdd != ""){
-                echo '<div class="alert alert-danger">' . $errorBdd . '</div>';
-            }else{
-                foreach ($pokemones as $pokemon){ ?>
-                    <div class="pokemon">
-                        <a href="/TP-Pokedex/views/detallePokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="cont_1">
-                            <img src="<?php echo $pokemon["imagen"]?>" alt="img_pokemon">
-                        </a>
-                        <div class="cont_2">
-                            <a href="/TP-Pokedex/views/detallePokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="descripcion">
-                                <p class="numero_pokemon"><?php echo $pokemon["id_pokemon"]?></p>
-                                <p class="nombre_pokemon"><?php echo $pokemon["nombre"]?></p>
-                                <img src="/TP-Pokedex/assets/tipos/<?php echo $pokemon["nombre_tipo"]?>.avif" alt="img_tipo">
+                    foreach ($pokemones as $pokemon){ ?>
+                        <div class="pokemon">
+                            <a href="/TP-Pokedex/views/detallePokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="cont_1">
+                                <img src="<?php echo $pokemon["imagen"]?>" alt="img_pokemon">
                             </a>
-                            <?php
+                            <div class="cont_2">
+                                <a href="/TP-Pokedex/views/detallePokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="descripcion">
+                                    <p class="numero_pokemon"><?php echo $pokemon["id_pokemon"]?></p>
+                                    <p class="nombre_pokemon"><?php echo $pokemon["nombre"]?></p>
+                                    <img src="/TP-Pokedex/assets/tipos/<?php echo $pokemon["nombre_tipo"]?>.avif" alt="img_tipo">
+                                </a>
+                                <?php
 
-                            if($estaLogeado){?>
-                                <div class="cont_botones">
-                                    <a href="editar" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
-                                    <a href="eliminar" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
-                                </div>
-                            <?php }?>
+                                if($estaLogeado){?>
+                                    <div class="cont_botones">
+                                        <a href="editar" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
+                                        <a href="eliminar" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                                    </div>
+                                <?php }?>
+                            </div>
                         </div>
-                    </div>
-                <?php }} ?>
+                    <?php }
+            } ?>
         </section>
 
         <div class="container_ancla">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2024 a las 02:43:56
+-- Tiempo de generación: 26-09-2024 a las 16:37:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -63,7 +63,14 @@ INSERT INTO `pokemon` (`id_pokemon`, `numero_identificador`, `imagen`, `nombre`,
 (18, 517, '/TP-Pokedex/assets/pokemones/Tangela.webp', 'Tangela', 3, 'Tangela está cubierto de lianas que se regeneran si se rompen.'),
 (19, 518, '/TP-Pokedex/assets/pokemones/Meganium.webp', 'Meganium', 3, 'Meganium tiene el poder de revitalizar la vegetación con su aliento y curar heridas.'),
 (20, 519, '/TP-Pokedex/assets/pokemones/Squirtle.webp', 'Squirtle', 1, 'Squirtle se protege en su caparazón y dispara agua con precisión.'),
-(21, 520, '/TP-Pokedex/assets/pokemones/Wartortle.webp', 'Wartortle', 1, 'Wartortle usa su cola para nadar con gran velocidad y precisión.');
+(21, 520, '/TP-Pokedex/assets/pokemones/Wartortle.webp', 'Wartortle', 1, 'Wartortle usa su cola para nadar con gran velocidad y precisión.'),
+(22, 522, '/TP-Pokedex/assets/pokemones/Ampharos.webp', 'Ampharos', 4, 'Ampharos emite rayos de luz desde su cola para enviar señales a larga distancia.'),
+(23, 523, '/TP-Pokedex/assets/pokemones/Electabuzz.webp', 'Electabuzz', 4, 'Electabuzz almacena electricidad en su cuerpo, y puede causar apagones si se acumula demasiada energía.'),
+(24, 524, '/TP-Pokedex/assets/pokemones/Jolteon.webp', 'Jolteon', 4, 'Jolteon puede lanzar púas electrificadas cuando está bajo ataque.'),
+(25, 525, '/TP-Pokedex/assets/pokemones/Mareep.webp', 'Mareep', 4, 'La lana de Mareep se carga de electricidad estática, lo que lo vuelve más fuerte en tormentas.'),
+(26, 526, '/TP-Pokedex/assets/pokemones/Pikachu.webp', 'Pikachu', 4, 'Pikachu genera electricidad en sus mejillas y la libera en forma de rayos.'),
+(27, 527, '/TP-Pokedex/assets/pokemones/Raichu.webp', 'Raichu', 4, 'Raichu puede almacenar una mayor cantidad de electricidad en su cuerpo que su preevolución Pikachu.'),
+(28, 528, '/TP-Pokedex/assets/pokemones/Raikou.webp', 'Raikou', 4, 'Raikou es capaz de lanzar rayos desde la nube de tormenta en su lomo.');
 
 -- --------------------------------------------------------
 
@@ -83,7 +90,8 @@ CREATE TABLE `tipo` (
 INSERT INTO `tipo` (`id_tipo`, `nombre_tipo`) VALUES
 (1, 'Agua'),
 (2, 'Fuego'),
-(3, 'Planta');
+(3, 'Planta'),
+(4, 'Electrico');
 
 -- --------------------------------------------------------
 
@@ -138,7 +146,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `pokemon`
 --
 ALTER TABLE `pokemon`
-  MODIFY `id_pokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_pokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo`

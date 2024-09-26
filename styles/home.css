@@ -180,6 +180,10 @@ main{
                 height: 2em;
                 border-radius: 5px;
             }
+
+            p{
+                margin: 0;
+            }
         }
 
         .cont_botones{
@@ -202,11 +206,11 @@ main{
 
             .btn_editar{
                 transition: all .2s;
-                background-color: #16168c;
+                background-color: #00a500;
             }
 
             .btn_editar:hover{
-                background-color: #3838af;
+                background-color: #2bba2b;
             }
 
             .btn_eliminar{

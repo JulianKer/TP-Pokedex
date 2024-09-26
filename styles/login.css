@@ -1,10 +1,13 @@
 body {
+    box-sizing: border-box;
+    max-height: 100vh;
+    height: 85vh;
     background-color: #e0f7fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .login-container {
     max-width: 400px;
-    margin: 100px auto;
+    margin: 85px auto;
     background-color: #00796b;
     border-radius: 50px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);

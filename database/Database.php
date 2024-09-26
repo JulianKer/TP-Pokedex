@@ -29,6 +29,9 @@ class Database{
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function dameTodosLosPokemones(){
+        return $this->conexion->query("SELECT * FROM `pokemon` INNER JOIN `tipo` ON `pokemon`.`id_tipo` = `tipo`.`id_tipo`")->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function getError(){
         return $this->error;
