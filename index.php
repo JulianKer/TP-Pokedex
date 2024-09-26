@@ -4,6 +4,7 @@ require_once("database/Database.php");
 $estaLogeado = false;
 $errorBdd = "";
 $errorBusqueda = "";
+$eliminacionExitosa = "";
 $criterioDeBusqueda = isset($_GET["criterioBusqueda"]) ? trim($_GET["criterioBusqueda"]) : "";
 $pokemones = "";
 
@@ -52,6 +53,17 @@ if ($bdd->getError() != ""){
 
 
     <main>
+
+        <section class="fondo-popup">
+            <section class="pop-up">
+                <img src="/TP-Pokedex/assets/icons/icon_warning.svg" alt="Ciudado" class="pop-up-check">
+                <p class="pop-up-mensaje">¿Seguro desea eliminar?</p>
+                <a href="/TP-Pokedex/controller/controllerEliminarPokemon.php" class="pop-up-btn">Aceptar</a>
+                <a href="/TP-Pokedex/index.php" class="pop-up-btn">Cancelar</a>
+            </section>
+        </section>
+
+
         <form class="form_buscador" action="index.php" method="get">
             <input type="search" name="criterioBusqueda" placeholder="Ingrese el nombre, tipo o número de pokemon" value="<?php echo $criterioDeBusqueda!="" ? $criterioDeBusqueda : ""?>">
             <input type="submit" value="Buscar" class="btn">
@@ -60,6 +72,10 @@ if ($bdd->getError() != ""){
         <?php
         if ($errorBusqueda != "") {
             echo '<div class="alert alert-danger" style="text-align: center">' . $errorBusqueda . '</div>';
+        }
+
+        if ($eliminacionExitosa != ""){
+            echo '<div class="alert alert-success" style="text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_check.svg" alt="Exitoso">' . $eliminacionExitosa . '</div>';
         }
 
         if ($errorBdd != "") {
