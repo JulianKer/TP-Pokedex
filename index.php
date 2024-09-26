@@ -76,7 +76,7 @@ if ($bdd->getError() != ""){
                                 <a href="/TP-Pokedex/views/detallePokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="descripcion">
                                     <p class="numero_pokemon"><?php echo $pokemon["id_pokemon"]?></p>
                                     <p class="nombre_pokemon"><?php echo $pokemon["nombre"]?></p>
-                                    <img src="/TP-Pokedex/assets/tipos/<?php echo $pokemon["nombre_tipo"]?>.avif" alt="img_tipo">
+                                    <img src="/TP-Pokedex/assets/tipos/<?php echo $pokemon["nombre_tipo"]?>.avif" alt="img_tipo" title="<?php echo $pokemon["nombre_tipo"]?>">
                                 </a>
                                 <?php
 
