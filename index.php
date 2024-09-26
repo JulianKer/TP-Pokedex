@@ -4,7 +4,7 @@ require_once("database/Database.php");
 $estaLogeado = false;
 $errorBdd = "";
 $errorBusqueda = "";
-$eliminacionExitosa = "";
+$eliminacionExitosa = isset($_GET["eliminacionExitosa"]) ? $_GET["eliminacionExitosa"] : "";
 $criterioDeBusqueda = isset($_GET["criterioBusqueda"]) ? trim($_GET["criterioBusqueda"]) : "";
 $pokemones = "";
 
@@ -46,6 +46,7 @@ if ($bdd->getError() != ""){
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/TP-Pokedex/styles/home.css">
+    <script src="/TP-Pokedex/js/popupEliminarPokemon.js" defer></script>
     <title>Inicio | Pokedex</title>
 </head>
 <body>
@@ -58,8 +59,10 @@ if ($bdd->getError() != ""){
             <section class="pop-up">
                 <img src="/TP-Pokedex/assets/icons/icon_warning.svg" alt="Ciudado" class="pop-up-check">
                 <p class="pop-up-mensaje">¿Seguro desea eliminar?</p>
-                <a href="/TP-Pokedex/controller/controllerEliminarPokemon.php" class="pop-up-btn">Aceptar</a>
-                <a href="/TP-Pokedex/index.php" class="pop-up-btn">Cancelar</a>
+                <div>
+                    <a href="/TP-Pokedex/index.php" class="btn_cancelar">Cancelar</a>
+                    <a href="#" class="btn_aceptar">Aceptar</a>
+                </div>
             </section>
         </section>
 
@@ -71,15 +74,15 @@ if ($bdd->getError() != ""){
 
         <?php
         if ($errorBusqueda != "") {
-            echo '<div class="alert alert-danger" style="text-align: center">' . $errorBusqueda . '</div>';
+            echo '<div class="alert alert-danger" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_error.svg" alt="Exitoso">' . $errorBusqueda . '</div>';
         }
 
         if ($eliminacionExitosa != ""){
-            echo '<div class="alert alert-success" style="text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_check.svg" alt="Exitoso">' . $eliminacionExitosa . '</div>';
+            echo '<div class="alert alert-success" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_check.svg" alt="Exitoso">' . $eliminacionExitosa . '</div>';
         }
 
         if ($errorBdd != "") {
-        echo '<div class="alert alert-danger" style="text-align: center">' . $errorBdd . '</div>';
+        echo '<div class="alert alert-danger" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_error.svg" alt="Exitoso">' . $errorBdd . '</div>';
         }else{?>
             <section class="contenedor_pokemones">
             <?php
@@ -99,7 +102,7 @@ if ($bdd->getError() != ""){
                                 if($estaLogeado){?>
                                     <div class="cont_botones">
                                         <a href="editar" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
-                                        <a href="eliminar" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
+                                            <a href="/TP-Pokedex/controller/controllerEliminarPokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
                                     </div>
                                 <?php }?>
                             </div>

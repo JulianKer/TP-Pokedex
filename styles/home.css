@@ -130,6 +130,90 @@ main{
 }
 
 
+
+/*---------------------PopUp--------------------------------*/
+
+.fondo-popup{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    & .pop-up{
+        width: 20em;
+        padding: 2em;
+        border-radius: .5em;
+        position: fixed;
+        z-index: 20;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+
+        & img{
+            width: 5em;
+        }
+
+        >div{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .btn_aceptar,
+        .btn_cancelar{
+            text-decoration: none;
+            color: #fff;
+            padding: .5em;
+            font-size: 1.2em;
+            border-radius: 7px;
+        }
+
+        .btn_aceptar{
+            transition: all .2s;
+            background-color: #00a500;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .btn_aceptar:hover{
+            background-color: #2bba2b;
+        }
+
+        .btn_cancelar{
+            transition: all .2s;
+            background-color: #ff0000;
+        }
+
+        .btn_cancelar:hover{
+            background-color: #ff5757;
+        }
+    }
+}
+
+
+
+
+
+
+
+/*----------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
 /*-----------------     CONTENEDOR DE LOS POKEMONES-------------------------------------------------------------------------------*/
 
 .contenedor_pokemones{
