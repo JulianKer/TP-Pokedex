@@ -3,21 +3,38 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: #b2dfdb;
+
+
 }
+
+body::-webkit-scrollbar{
+    width: auto;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #004d40;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #b2dfdb;
+}
+
+
+
+
 
 main{
     min-height: 90vh;
-    margin: 2em 1em;
+    margin: 2em 5em;
 }
 
 
 .form_buscador{
-    margin: 1em 0;
+    margin: 4em 0;
     display: flex;
     justify-content: space-between;
     gap: 0;
 
-    & input[type="text"]{
+    & input[type="search"]{
         border: 0;
         font-size: 1.2em;
         padding: 0 1em;
@@ -26,7 +43,7 @@ main{
         width: 90%;
     }
 
-    input[type="text"]:focus{
+    input[type="search"]:focus{
         outline: 0;
     }
 
@@ -46,11 +63,13 @@ main{
     font-weight: bold;
     padding: 1em;
     font-size: 1em;
+    transition: all .2s;
 }
 
 .btn-new-pokemon{
     width: 100%;
     padding: .8em;
+    margin: 3em 0 3em 0;
     border-radius: 3px;
 
     position: sticky;
@@ -69,112 +88,232 @@ main{
 }
 
 
-/*-----------------     CONTENEDOR DE LOS POKEMONES-------------------------------------------------------------------------------*/
-
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 2em 0;
+.container_ancla{
     display: flex;
     justify-content: center;
+
+    & .ancla{
+        width: 3em;
+        margin: 3em 0;
+        justify-self: center;
+        transition: all .3s;
+
+        & img{
+            width: 2.5em;
+            border-radius: 5em;
+            border: solid 3px #00796BFF;
+        }
+    }
 }
 
-table {
-    background-color: #fff;
-    width: 70%;
-    min-width: 600px;
-    border-collapse: collapse;
+.container_ancla .ancla:hover{
+    animation: flotar 2s infinite;
 }
 
-th, td {
-    padding: 10px;
-    text-align: center;
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+
+@keyframes flotar {
+    0%{
+        transform: translateY(10px);
+    }
+    25%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    75%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
 }
 
-tr{
-    opacity: 0;
-    transform: scaleY(0.5);
-    animation: show 0.5s forwards;
-}
 
-th{
-    background-color: #e4e4e4;
-    border: 1px solid #ccc;
-    border-top: 0;
-}
 
-td{
-    border: 1px solid #ccc;
-}
+/*---------------------PopUp--------------------------------*/
 
-.img_poke{
-    max-width: 10em;
-    width: 9.8em;
-}
-
-.img_tipo {
-    width: 4em;
-}
-
-.col1, .col2{
-    max-width: 10em;
-    width: 10em;
-}
-
-.col3{
-    min-width: 3em;
-}
-.col4{
-    min-width: 5em;
-}
-
-.col5 >div{
-    display: flex;
-    justify-content: space-around;
-}
-
-.btn_editar,
-.btn_eliminar{
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-evenly;
+.fondo-popup{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
     align-items: center;
-    width: 7em;
-    height: 2em;
+
+    & .pop-up{
+        width: 20em;
+        padding: 2em;
+        border-radius: .5em;
+        position: fixed;
+        z-index: 20;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+
+        & img{
+            width: 5em;
+        }
+
+        >div{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .btn_aceptar,
+        .btn_cancelar{
+            text-decoration: none;
+            color: #fff;
+            padding: .5em;
+            font-size: 1.2em;
+            border-radius: 7px;
+        }
+
+        .btn_aceptar{
+            transition: all .2s;
+            background-color: #00a500;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .btn_aceptar:hover{
+            background-color: #2bba2b;
+        }
+
+        .btn_cancelar{
+            transition: all .2s;
+            background-color: #ff0000;
+        }
+
+        .btn_cancelar:hover{
+            background-color: #ff5757;
+        }
+    }
 }
 
-.btn_editar{
-    background-color: #16168c;
+
+
+
+
+
+
+/*----------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-----------------     CONTENEDOR DE LOS POKEMONES-------------------------------------------------------------------------------*/
+
+.contenedor_pokemones{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    place-items: center;
+    gap: 2.5em 1em;
+
+    margin: 3em 0;
 }
 
-.btn_eliminar{
-    background-color: red;
+.pokemon{
+    background: linear-gradient(to top, #004D40FF, #004D40FF, #62afa6, #62afa6, #62afa6);
+    border-radius: 20px;
+    max-width: 270px;
+    padding: 1.5em 1em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: show 0.5s forwards;
+
+    & .cont_1{
+        width: 100%;
+
+        & img{
+            width: 260px;
+            height: 256px;
+            padding-bottom: 1em;
+        }
+    }
+
+    .cont_2{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        & .descripcion{
+            text-decoration: none;
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+            font-size: 1.2em;
+            color: #fff;
+            font-weight: bolder;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            & img{
+                width: 2em;
+                height: 2em;
+                border-radius: 5px;
+            }
+
+            p{
+                margin: 0;
+            }
+        }
+
+        .cont_botones{
+            display: flex;
+            justify-content: space-evenly;
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+            & .btn_editar,
+            .btn_eliminar{
+                color: #fff;
+                border-radius: 5px;
+                padding: 5px;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 7em;
+                height: 2em;
+            }
+
+            .btn_editar{
+                transition: all .2s;
+                background-color: #00a500;
+            }
+
+            .btn_editar:hover{
+                background-color: #2bba2b;
+            }
+
+            .btn_eliminar{
+                transition: all .2s;
+                background-color: #ff0000;
+            }
+
+            .btn_eliminar:hover{
+                background-color: #ff5757;
+            }
+        }
+    }
 }
 
-
-
-
-
-
-
-
-/* ESTILO DE LA SCROLL Y LA ANIMACION DE CUANDO RECARGA LA PAG---------------------------*/
-.table-container::-webkit-scrollbar {
-    height: 10px;
+.pokemon:hover{
+    box-shadow: 0 0 15px #000;
+    transform: translateX(50px);
 }
 
-.table-container::-webkit-scrollbar-thumb {
-    background-color: #ff8f00;
-    border-radius: 10px;
-}
-
-.table-container::-webkit-scrollbar-track {
-    background-color: #e4e4e4;
-}
 
 @keyframes show {
     0% {
@@ -186,41 +325,37 @@ td{
         transform: scaleY(1);
     }
 }
+/*----------FIN CONTENEDOR POKEMONES --------------------------------------------------------------------------*/
 
-/* --------------------------------------------------------------------------------------------*/
 
 
-@media screen and (max-width: 1230px){
 
-    .table-container{
-        display: block;
-    }
-
-    table{
-        width: 100%;
-    }
-
-    .col5 >div{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
-
-}
 
 
 
 
 @media screen and (max-width: 700px){
+    main{
+        margin: 2em 1em;
+    }
+
+    header{
+        padding: .7em 1em;
+    }
 
     .form_buscador {
-        & input[type="text"] {
+        & input[type="search"] {
             width: 70%;
         }
 
         input[type="submit"] {
             width: 30%;
+        }
+    }
+
+    .container_ancla{
+        & .ancla{
+            margin: 0;
         }
     }
 }
