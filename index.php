@@ -101,8 +101,8 @@ if ($bdd->getError() != ""){
 
                                 if($estaLogeado){?>
                                     <div class="cont_botones">
+                                        <a href="/TP-Pokedex/controller/controllerEliminarPokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
                                         <a href="editar" class="btn_editar"> <img src="assets/icons/icon_edit.svg">Editar</a>
-                                            <a href="/TP-Pokedex/controller/controllerEliminarPokemon.php?id_pokemon=<?php echo $pokemon["id_pokemon"]?>" class="btn_eliminar"> <img src="assets/icons/icon_delete.svg">Eliminar</a>
                                     </div>
                                 <?php }?>
                             </div>
