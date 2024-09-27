@@ -41,4 +41,10 @@ class Database{
             $this->conexion->close();
         }
     }
+
+    public function eliminarPokemonPorId($idPokemonAEliminar){
+        $stmt = $this->conexion->prepare("DELETE FROM `pokemon` where `id_pokemon` = ?");
+        $stmt->bind_param("s",$idPokemonAEliminar);
+        $stmt->execute();
+    }
 }
