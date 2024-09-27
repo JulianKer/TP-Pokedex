@@ -17,6 +17,8 @@ if (isset($_GET["error"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/TP-Pokedex/assets/icons/pokemon-logo.svg">
     <title>Iniciar Sesión - Pokedex</title>
 
     <!-- Bootstrap CSS -->

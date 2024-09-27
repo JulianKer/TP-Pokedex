@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="13877d92-3b54-4806-bb67-3b89d1180c92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/detallePokemon.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/detallePokemon.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +73,7 @@
       <updated>1727380806358</updated>
       <workItem from="1727380808516" duration="15853000" />
       <workItem from="1727441716636" duration="84000" />
-      <workItem from="1727441807950" duration="305000" />
+      <workItem from="1727441807950" duration="614000" />
     </task>
     <servers />
   </component>

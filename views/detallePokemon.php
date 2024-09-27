@@ -22,7 +22,8 @@ $pokemon = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/TP-Pokedex/styles/detallePokemon.css">
-    <title>Inicio | Pokedex</title>
+    <link rel="icon" href="/TP-Pokedex/assets/icons/pokemon-logo.svg">
+    <title>Detalle Pokemon | Pokedex</title>
 </head>
 <body>
     <?php require_once("header.php")?>
