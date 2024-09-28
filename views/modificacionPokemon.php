@@ -76,8 +76,8 @@ $tipoSeleccionado =  $pokemonEncontrado[0]["nombre_tipo"];
             </div>
 
             <div>
-                <label for="modif_id_unico">N° Identificador</label>
-                <input type="number" min="500" name="modif_id_unico" id="modif_id_unico" placeholder="N° Identificador (mayor a 500)" class="form-control" value="<?php echo $pokemonEncontrado[0]["numero_identificador"]?>">
+                <label for="modif_id_unico">N° Identificador (mayor o igual a 500)</label>
+                <input type="number" min="500" required name="modif_id_unico" id="modif_id_unico" placeholder="N° Identificador (mayor a 500)" class="form-control" value="<?php echo $pokemonEncontrado[0]["numero_identificador"]?>">
             </div>
 
             <div>

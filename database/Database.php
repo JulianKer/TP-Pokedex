@@ -62,9 +62,9 @@ class Database{
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function editarPokemon($nombre, $descripcion, $idUnicoPokemon, $tipoPokemon, $imagen,$idPokemonAEditar){
+    public function editarPokemon($nombre, $descripcion, $idUnicoPokemon, $tipoPokemon, $rutaImg,$idPokemonAEditar){
         $stmt = $this->conexion->prepare("UPDATE `pokemon` SET `numero_identificador`= ? ,`imagen`= ? ,`nombre`= ? ,`id_tipo`= ? ,`descripcion`= ? WHERE `id_pokemon` = ? ");
-        $stmt->bind_param("issisi",$idUnicoPokemon,$imagen,$nombre,$tipoPokemon,$descripcion,$idPokemonAEditar);
+        $stmt->bind_param("issisi",$idUnicoPokemon,$rutaImg,$nombre,$tipoPokemon,$descripcion,$idPokemonAEditar);
         $stmt->execute();
     }
 
