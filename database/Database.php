@@ -74,4 +74,10 @@ class Database{
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function crearPokemon($new_nombre, $new_descripcion, $new_id_unico, $new_tipo, $rutaParaGuardarEnBdd){
+        $stmt = $this->conexion->prepare("INSERT INTO `pokemon` (`numero_identificador`, `imagen`, `nombre`, `id_tipo`, `descripcion`) VALUES (?,?,?,?,?)");
+        $stmt->bind_param("issis",$new_id_unico, $rutaParaGuardarEnBdd, $new_nombre, $new_tipo, $new_descripcion);
+        $stmt->execute();
+    }
 }

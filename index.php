@@ -117,7 +117,7 @@ if ($bdd->getError() != ""){
             <a href="#arriba" class="ancla"><img src="/TP-Pokedex/assets/icons/arrowTop.svg" alt="arrowTop" title="Ir Arriba"></a>
         </div>
         <button class="btn-new-pokemon">
-            <a href="#">Nuevo pokemon</a>
+            <a href="/TP-Pokedex/views/nuevoPokemon.php">Nuevo pokemon</a>
         </button>
     </main>
 
