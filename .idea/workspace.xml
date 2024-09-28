@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13877d92-3b54-4806-bb67-3b89d1180c92" name="Changes" comment="" />
+    <list default="true" id="13877d92-3b54-4806-bb67-3b89d1180c92" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerModificacionPokemon.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerModificacionPokemon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/popupEliminarPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/popupEliminarPokemon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/modificacionPokemon.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/modificacionPokemon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modificacionPokemon.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modificacionPokemon.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -73,7 +81,7 @@
       <workItem from="1727380808516" duration="15853000" />
       <workItem from="1727441716636" duration="84000" />
       <workItem from="1727441807950" duration="1973000" />
-      <workItem from="1727467704724" duration="6911000" />
+      <workItem from="1727467704724" duration="21213000" />
     </task>
     <servers />
   </component>

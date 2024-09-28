@@ -76,7 +76,7 @@ if ($bdd->getError() != ""){
 
         <?php
         if ($errorBusqueda != "") {
-            echo '<div class="alert alert-danger" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_error.svg" alt="Exitoso">' . $errorBusqueda . '</div>';
+            echo '<div class="alert alert-danger" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_error.svg" alt="error">' . $errorBusqueda . '</div>';
         }
 
         if ($eliminacionExitosa != ""){
@@ -84,7 +84,7 @@ if ($bdd->getError() != ""){
         }
 
         if ($errorBdd != "") {
-        echo '<div class="alert alert-danger" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_error.svg" alt="Exitoso">' . $errorBdd . '</div>';
+        echo '<div class="alert alert-danger" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_error.svg" alt="error">' . $errorBdd . '</div>';
         }else{?>
             <section class="contenedor_pokemones">
             <?php

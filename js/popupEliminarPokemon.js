@@ -1,5 +1,4 @@
 let btnEliminar = document.querySelectorAll(".btn_eliminar")
-
 let popupEliminarPokemon = document.querySelector(".fondo-popup")
 let btnCancelar = document.querySelector(".btn_cancelar")
 let btnAceptar = document.querySelector(".btn_aceptar")

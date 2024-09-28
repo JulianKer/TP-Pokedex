@@ -47,4 +47,31 @@ class Database{
         $stmt->bind_param("s",$idPokemonAEliminar);
         $stmt->execute();
     }
+
+    public function buscarPokemonPorId($idRecibido){
+        $stmt = $this->conexion->prepare("SELECT * FROM `pokemon` JOIN `tipo` ON `tipo`.`id_tipo` = `pokemon`.`id_tipo` where `pokemon`.`id_pokemon` = ?");
+        $stmt->bind_param("i",$idRecibido);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function buscarPokemonPorNumeroIdentificador($idUnicoPokemon){
+        $stmt = $this->conexion->prepare("SELECT * FROM `pokemon` where `numero_identificador` = ?");
+        $stmt->bind_param("i",$idUnicoPokemon);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function editarPokemon($nombre, $descripcion, $idUnicoPokemon, $tipoPokemon, $imagen,$idPokemonAEditar){
+        $stmt = $this->conexion->prepare("UPDATE `pokemon` SET `numero_identificador`= ? ,`imagen`= ? ,`nombre`= ? ,`id_tipo`= ? ,`descripcion`= ? WHERE `id_pokemon` = ? ");
+        $stmt->bind_param("issisi",$idUnicoPokemon,$imagen,$nombre,$tipoPokemon,$descripcion,$idPokemonAEditar);
+        $stmt->execute();
+    }
+
+    public function bucarPokemonPorNombre($nombre){
+        $stmt = $this->conexion->prepare("SELECT * FROM `pokemon` where `nombre` LIKE ?");
+        $stmt->bind_param("s",$nombre);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 }
