@@ -1,0 +1,219 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #b2dfdb;
+
+
+}
+
+body::-webkit-scrollbar{
+    width: auto;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #004d40;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #b2dfdb;
+}
+
+main{
+    min-height: 90vh;
+    margin: 2em 5em;
+
+    & h1{
+        font-size: 2em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-bottom: .5em;
+        border-bottom: 2px solid #00796BFF;
+        margin-bottom: .5em;
+
+    }
+
+    form{
+        display: grid;
+        grid-template-columns: 1fr;
+
+        & .contenedor_inputs{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+
+            & label{
+                font-size: 1.2em;
+                font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+                color: black;
+                margin: 0 0 5px 5px;
+            }
+
+            >div{
+                width: 50%;
+
+                & textarea{
+                    max-height: 10em;
+                }
+            }
+
+        }
+
+        .cont_botones{
+            grid-column: 1/3;
+            padding-top: 4em;
+        }
+    }
+}
+
+
+.cont_botones{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+    & .btn_editar,
+    .btn_eliminar{
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 7em;
+        height: 2em;
+        font-size: 1.2em;
+    }
+
+    .btn_editar{
+        transition: all .2s;
+        background-color: #00a500;
+    }
+
+    .btn_editar:hover{
+        background-color: #2bba2b;
+    }
+
+    .btn_eliminar{
+        transition: all .2s;
+        background-color: #ff0000;
+    }
+
+    .btn_eliminar:hover{
+        background-color: #ff5757;
+    }
+}
+
+
+
+.fondo-popup{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    & .pop-up{
+        width: 20em;
+        padding: 2em;
+        border-radius: .5em;
+        position: fixed;
+        z-index: 20;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+
+        & img{
+            width: 5em;
+        }
+
+        >div{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .btn_aceptar,
+        .btn_cancelar{
+            text-decoration: none;
+            color: #fff;
+            padding: .5em;
+            font-size: 1.2em;
+            border-radius: 7px;
+        }
+
+        .btn_aceptar{
+            transition: all .2s;
+            background-color: #00a500;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .btn_aceptar:hover{
+            background-color: #2bba2b;
+        }
+
+        .btn_cancelar{
+            transition: all .2s;
+            background-color: #ff0000;
+        }
+
+        .btn_cancelar:hover{
+            background-color: #ff5757;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------media-querys-------------------------*/
+
+@media screen and (max-width: 1100px){
+
+    main form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 700px){
+    main{
+        margin: 2em 1em;
+    }
+
+    header{
+        padding: .7em 1em;
+    }
+
+    form .contenedor_inputs{
+        margin-top: 1.5em;
+    }
+    main form .contenedor_inputs >div{
+        width: 100%;
+    }
+}
