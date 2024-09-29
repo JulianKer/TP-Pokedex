@@ -68,14 +68,16 @@ main{
 
 .btn-new-pokemon{
     width: 100%;
-    padding: .8em;
+    padding: 0;
     margin: 3em 0 3em 0;
     border-radius: 3px;
 
     position: sticky;
     bottom: 10px;
     & a{
+        display: block;
         width: 100%;
+        padding: .8em;
         color: #fff;
         text-decoration: none;
     }
