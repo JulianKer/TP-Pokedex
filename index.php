@@ -52,6 +52,7 @@ if ($bdd->getError() != ""){
     <title>Inicio | Pokedex</title>
 </head>
 <body>
+    <div id="arriba" style="position: absolute; top: -100px;"></div>
     <?php require_once("views/header.php")?>
 
 
@@ -116,9 +117,11 @@ if ($bdd->getError() != ""){
         <div class="container_ancla">
             <a href="#arriba" class="ancla"><img src="/TP-Pokedex/assets/icons/arrowTop.svg" alt="arrowTop" title="Ir Arriba"></a>
         </div>
-        <button class="btn-new-pokemon">
-            <a href="/TP-Pokedex/views/nuevoPokemon.php">Nuevo pokemon</a>
-        </button>
+        <?php  if($estaLogeado){?>
+            <button class="btn-new-pokemon">
+                <a href="/TP-Pokedex/views/nuevoPokemon.php">Nuevo pokemon</a>
+            </button>
+        <?php }?>
     </main>
 
 

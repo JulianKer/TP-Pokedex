@@ -11,6 +11,9 @@ if ($estaLogeado) {
     header{
         background-color: #fff;
         padding: .7em 5em;
+        position: sticky;
+        top: 0px;
+        z-index: 200;
     }
 
     @media screen and (max-width: 700px){
