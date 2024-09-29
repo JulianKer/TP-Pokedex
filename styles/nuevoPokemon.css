@@ -142,7 +142,8 @@ main{
         }
 
         .btn_aceptar,
-        .btn_cancelar{
+        .btn_cancelar,
+        #botonAceptarCesrrarSesion{
             text-decoration: none;
             color: #fff;
             padding: .5em;
@@ -150,14 +151,14 @@ main{
             border-radius: 7px;
         }
 
-        .btn_aceptar{
+        .btn_aceptar,#botonAceptarCesrrarSesion{
             transition: all .2s;
             background-color: #00a500;
             text-decoration: none;
             color: #fff;
         }
 
-        .btn_aceptar:hover{
+        .btn_aceptar:hover,#botonAceptarCesrrarSesion:hover{
             background-color: #2bba2b;
         }
 

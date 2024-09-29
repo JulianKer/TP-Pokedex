@@ -47,6 +47,7 @@ if ($bdd->getError() != ""){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/TP-Pokedex/styles/home.css">
     <script src="/TP-Pokedex/js/popupEliminarPokemon.js" defer></script>
+    <script src="/TP-Pokedex/js/popupCerrarSesion.js" defer></script>
 
     <link rel="icon" href="/TP-Pokedex/assets/icons/pokemon-logo.svg">
     <title>Inicio | Pokedex</title>
@@ -65,6 +66,17 @@ if ($bdd->getError() != ""){
                 <div>
                     <a href="/TP-Pokedex/index.php" class="btn_cancelar">Cancelar</a>
                     <a href="#" class="btn_aceptar">Aceptar</a>
+                </div>
+            </section>
+        </section>
+
+        <section class="fondo-popup" id="popUpCerrarSesion">
+            <section class="pop-up">
+                <img src="/TP-Pokedex/assets/icons/icon_warning.svg" alt="Ciudado" class="pop-up-check">
+                <p class="pop-up-mensaje">¿Seguro desea salir?</p>
+                <div>
+                    <a href="/TP-Pokedex/index.php" class="btn_cancelar" id="botonCancelarCesrrarSesion">Cancelar</a>
+                    <a href="" id="botonAceptarCesrrarSesion">Aceptar</a>
                 </div>
             </section>
         </section>

@@ -13,7 +13,7 @@ if ($estaLogeado) {
         padding: .7em 5em;
         position: sticky;
         top: 0px;
-        z-index: 200;
+        z-index: 5;
     }
 
     @media screen and (max-width: 700px){
@@ -33,7 +33,7 @@ if ($estaLogeado) {
         <?php } else { ?>
             <p style="font-family: 'Open Sans', 'DejaVu Sans', sans-serif; font-weight: bold; color: #00796b; display: flex; align-items: center; gap: 10px; margin:0">
                 ADMIN: <?php echo $nombre; ?>
-                <a href="/TP-Pokedex/controller/controllerLogOut.php"><img src="/TP-Pokedex/assets/icons/icon_logout.svg" alt="Cerrar sesión" title="Cerrar sesión"></a>
+                <a href="/TP-Pokedex/controller/controllerLogOut.php" id="logoCerrarSesion"><img src="/TP-Pokedex/assets/icons/icon_logout.svg" alt="Cerrar sesión" title="Cerrar sesión"></a>
             </p>
         <?php } ?>
     </nav>

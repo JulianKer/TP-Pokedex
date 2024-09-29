@@ -33,6 +33,7 @@ $tipoSeleccionado =  $pokemonEncontrado[0]["nombre_tipo"];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/TP-Pokedex/styles/modificacionPokemon.css">
     <script src="/TP-Pokedex/js/pupupGuardarCambiosPokemon.js" defer></script>
+    <script src="/TP-Pokedex/js/popupCerrarSesion.js" defer></script>
 
     <link rel="icon" href="/TP-Pokedex/assets/icons/pokemon-logo.svg">
     <title> | Pokedex</title>
@@ -52,6 +53,19 @@ $tipoSeleccionado =  $pokemonEncontrado[0]["nombre_tipo"];
             </div>
         </section>
     </section>
+
+
+        <section class="fondo-popup" id="popUpCerrarSesion">
+            <section class="pop-up">
+                <img src="/TP-Pokedex/assets/icons/icon_warning.svg" alt="Ciudado" class="pop-up-check">
+                <p class="pop-up-mensaje">¿Seguro desea salir?</p>
+                <div>
+                    <a href="/TP-Pokedex/index.php" class="btn_cancelar" id="botonCancelarCesrrarSesion">Cancelar</a>
+                    <a href="" id="botonAceptarCesrrarSesion">Aceptar</a>
+                </div>
+            </section>
+        </section>
+
         <?php
         if ($msjError != "") {
             echo '<div class="alert alert-danger" style="display: flex; justify-content: center; align-items: center; gap: 1em; text-align: center"> <img src="/TP-Pokedex/assets/icons/icon_error.svg" alt="error">' . $msjError . '</div>';
