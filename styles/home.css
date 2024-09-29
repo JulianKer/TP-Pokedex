@@ -93,39 +93,40 @@ main{
     justify-content: center;
 
     & .ancla{
-        width: 3em;
+        width: 4em;
         margin: 3em 0;
         justify-self: center;
         transition: all .3s;
+        animation: flotar 2s infinite;
 
         & img{
-            width: 2.5em;
+            width: 3em;
             border-radius: 5em;
             border: solid 3px #00796BFF;
         }
     }
 }
 
-.container_ancla .ancla:hover{
-    animation: flotar 2s infinite;
+.container_ancla .ancla:hover img{
+    border: solid 3px #ff8f00;
 }
 
 
 @keyframes flotar {
     0%{
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
     25%{
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
     50%{
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
     75%{
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
     100%{
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
 }
 
