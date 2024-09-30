@@ -1,45 +1,200 @@
-html, body {
-    height: 100%;
+body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to top, #b2dfdb, #00796b,#00796b )
+    box-sizing: border-box;
+    background-color: #b2dfdb;
+
+
 }
 
-/* El contenedor principal ocupa toda la pantalla */
-.contenedor_general {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Altura completa de la pantalla */
+body::-webkit-scrollbar{
+    width: auto;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #004d40;
 }
 
-/* Sección detalle-pokemon: distribución horizontal de los elementos */
-.detalle-pokemon {
-    display: flex;
-    justify-content: space-around;
+body::-webkit-scrollbar-track {
+    background-color: #b2dfdb;
+}
+
+main{
+    min-height: 90vh;
+    margin: 2em 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+
+    & .img_pokemon{
+        width: 100%;
+        max-width: 25em;
+    }
+
+    .contenedor_1{
+        font-size: 1.2em;
+
+        & span{
+            font-weight: bolder;
+            font-size: 1.2em;
+            margin-right: 1em;
+        }
+
+        h3{
+            font-size: 2em;
+        }
+
+        >div{
+            display: flex;
+            align-items: center;
+            & img {
+                margin-left: 1em;
+                width: 3em;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .contenedor_descripcion_pokemon{
+        grid-column: 1/4;
+        font-size: 1.1em;
+    }
+}
+
+.Agua{
+    color: #003cff;
+}
+
+.Fuego{
+    color: #d50f0f;
+}
+
+.Planta{
+    color: green;
+}
+
+.Electrico{
+    color: #ffff00;
+    -webkit-text-stroke: 1px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#popUpCerrarSesion{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
     align-items: center;
-    flex-grow: 1; /* Ocupa el espacio disponible verticalmente */
-    margin: 20px;
+
+    & .pop-up{
+        width: 20em;
+        padding: 2em;
+        border-radius: .5em;
+        position: fixed;
+        z-index: 20;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+
+        & img{
+            width: 5em;
+        }
+
+        >div{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .btn_aceptar,
+        .btn_cancelar,
+        #botonAceptarCesrrarSesion{
+            text-decoration: none;
+            color: #fff;
+            padding: .5em;
+            font-size: 1.2em;
+            border-radius: 7px;
+        }
+
+        .btn_aceptar,#botonAceptarCesrrarSesion{
+            transition: all .2s;
+            background-color: #00a500;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .btn_aceptar:hover,#botonAceptarCesrrarSesion:hover{
+            background-color: #2bba2b;
+        }
+
+        .btn_cancelar{
+            transition: all .2s;
+            background-color: #ff0000;
+        }
+
+        .btn_cancelar:hover{
+            background-color: #ff5757;
+        }
+    }
 }
 
-/* Imagen del Pokémon */
-.imagen-pokemon img {
-    max-width: 400px;
-    border: 5px solid white; /* Borde blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 5px; /* Espacio entre la imagen y el borde */
-}
 
-/* Detalles del Pokémon */
-.info-pokemon {
-    max-width: 400px;
-    line-height: 1.5;
-    border: 2px solid white; /* Borde blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 10px; /* Espacio interno */
-    background-color: rgba(255, 255, 255, 0.8)
-}
 
-/* Párrafos dentro de los detalles */
-.info-pokemon p {
-    margin: 15px 0; /* Espacio entre párrafos */
+
+
+
+
+/*----------------------------------------------------------*/
+
+
+
+
+@media screen and (max-width: 700px) {
+    main {
+        margin: 2em 1em;
+        display: flex;
+        flex-direction: column;
+
+        & .contenedor_1 h3{
+            text-align: start;
+        }
+
+        .contenedor_descripcion_pokemon{
+            font-size: 1.3em; !important;
+            text-align: center;
+        }
+    }
+
+    header {
+        padding: .7em 1em;
+    }
 }
